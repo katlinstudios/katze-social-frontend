@@ -22,7 +22,7 @@ npx patch-package
 npm run web   # or: npm run android | npm run ios
  ```
 
-See DEVELOPER.md for environment variables, tests, and troubleshooting.
+See ```DEVELOPER.md``` for environment variables, tests, and troubleshooting.
 
  ---
 

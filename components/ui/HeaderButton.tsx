@@ -12,7 +12,7 @@ export default function HeaderButton({ id, title, icon, hasNews }: HeaderButtonP
         <button id={id} title={title}>
             <div style={{ display: hasNews ? "flex" : "none", position: "absolute", top: 0, right: 0, width: "8px", height: "8px", backgroundColor: "red", borderRadius: "50%" }}></div>
 
-            <MaterialIcons name={icon} size={24} color={"white"} />
+            <MaterialIcons name={icon  as keyof typeof MaterialIcons.glyphMap} size={24} color={"white"} />
         </button>
     )
 }

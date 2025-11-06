@@ -16,8 +16,8 @@ export default function SideBarButton({ title, icon, isAddThread }: SideBarButto
     const id = name.replace(" ", "").slice(0, 1).toLowerCase() + name.replace(" ", "").slice(1);
 
     return (
-        <button id={id + "SideBarButton"} title={name} className={isAddThread && "main-button"}>
-            <MaterialIcons name={icon} size={24} color="white" />
+        <button id={id + "SideBarButton"} title={name} className={isAddThread && "main-button" || undefined}>
+            <MaterialIcons name={icon as keyof typeof MaterialIcons.glyphMap} size={24} color="white" />
             {name}
         </button>
     )

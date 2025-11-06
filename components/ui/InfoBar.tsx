@@ -75,6 +75,7 @@ export default function InfoBar() {
                             title={card.title}
                             cover={card.cover}
                             icon={card.icon}
+                            onlineCount={25}
                         />
                     ))}
                 </div>

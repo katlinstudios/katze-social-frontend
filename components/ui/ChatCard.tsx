@@ -24,7 +24,7 @@ export default function ChatCard({ cover, title, onlineCount, currentActivity }:
                 <div className="activity">
                     {currentActivity &&
                         <MaterialIcons
-                            name={icons[currentActivity] || "help"}
+                            name={(icons[currentActivity] || "help")  as keyof typeof MaterialIcons.glyphMap}
                             color="white"
                             size={16}
                         />}

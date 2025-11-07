@@ -6,7 +6,7 @@
 <p align="center"><strong>A social network for finding new communities and friends.</strong></p>
 
 <p align="center">
-<a href="https://x.com/katlin_studios"><img src="https://img.shields.io/twitter/follow/duoliciousapp" alt="Katlin Studios Twitter"/></a>
+<a href="https://x.com/katlin_studios"><img src="https://img.shields.io/twitter/follow/katlin_studios" alt="Katlin Studios Twitter"/></a>
 </p>
 
 ---

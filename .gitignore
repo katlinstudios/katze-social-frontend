@@ -44,3 +44,5 @@ app-example
 
 # Custom
 .vscode/
+functions/
+firebase-debug.log

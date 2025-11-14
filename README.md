@@ -32,6 +32,9 @@ npm run web        # Web (recommended for first-time contributors)
 npm run android    # Android (emulator or device required)
 npm run ios        # iOS (macOS + Xcode required)
 
+# If already implemented, run the local API to test the app
+npm run api
+
 ```
 
 ---

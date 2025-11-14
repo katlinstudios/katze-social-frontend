@@ -1,44 +1,108 @@
-# Example API (local)
+# 🐾 Katze Social – Local Testing API
 
-This is a tiny in-memory API for local testing of the frontend. It has no external
-dependencies — run it with Node.js.
+This is a lightweight, dependency-free mock API for testing the Katze Social frontend. It simulates basic user and post interactions, making it ideal for local development and UI prototyping.
 
-Run:
+---
 
-```powershell
+## 🚀 Getting Started
+
+Prerequisites
+- Node.js (v14+ recommended)
+- No external packages required
+Run the API
+
+```bash
+node api/api.ts
+# or
 npm run api
 ```
 
-Default port: 4000 (set `PORT` to override)
+The server will start on http://localhost:4000 (or the port defined in process.env.PORT).
 
-Available endpoints:
+---
 
-- `GET /health` — returns { status: 'ok' }
-- `GET /users` — returns sample users
-- `GET /users/:id` — get a single user
-- `POST /auth/login` — body: { username } — returns a fake token and user
-- `GET /posts` — returns posts
-- `POST /posts` — body: { authorId, content } — creates a post
-- `GET /feed` — returns posts merged with author info
+## 📡 Available Endpoints
 
-Examples:
+### Health Check
 
-```powershell
-# health
-curl http://localhost:4000/health
+- `GET /health`
+Returns `{ status: "ok", ts: <timestamp> }` to verify the server is running.
 
-# list users
-curl http://localhost:4000/users
+###Users
 
-# login (example)
-curl -X POST http://localhost:4000/auth/login -H "Content-Type: application/json" -d '{"username":"sadgabi20"}'
+- `GET /users`
+Returns the full list of mock users.
 
-# create post
-curl -X POST http://localhost:4000/posts -H "Content-Type: application/json" -d '{"authorId":"1","content":"Hello from curl"}'
+- `GET /users/:id`
+Fetch a specific user by ID.
 
-# feed
-curl http://localhost:4000/feed
+### Authentication
+
+- `POST /auth/login`
+Simulates login with a username.
+**Body:**
+```json
+{ "username": "sadgabi20" }
+```
+- **Response:**
+Returns a fake token and user info.
+
+
+### Posts
+- `GET /posts`
+Returns all posts.
+
+- `POST /posts`
+Create a new post.
+**Body:**
+```json
+{
+  "authorId": "1",
+  "content": "This is a new post!"
+}
 ```
 
-This server is intentionally tiny and in-memory. It's suitable for local UI testing but not for production. Extend or replace with Express/JSON-server or a real backend when
-needed.
+- **Response:**
+Returns the created post object.
+
+### Feed
+- `GET /feed`
+Returns posts merged with author info.
+
+---
+
+## 🧪 Example Users
+
+```json
+[
+  {
+    "id": "1",
+    "displayName": "SadGabi",
+    "username": "sadgabi20",
+    "isVerified": true,
+    "isOnline": true
+  },
+  {
+    "id": "2",
+    "displayName": "CatLover",
+    "username": "catlover",
+    "isVerified": false,
+    "isOnline": false
+  }
+]
+```
+
+## 📝 Notes
+
+- All data is stored in-memory and resets on server restart.
+- CORS is enabled for all origins.
+- This API is designed for local testing only — no authentication, persistence, or security features.
+
+---
+
+## 🧩 Extending the API
+
+You can easily add new endpoints or enrich existing ones. For example:
+- Add support for media, polls, or audio threads via threadType.
+- Implement pagination or filtering for /posts and /feed.
+- Simulate user status changes or post interactions.
